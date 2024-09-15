@@ -7,7 +7,24 @@ tags:
   - notice
 published: false
 ---
-
+<table>
+  <thead>
+    <tr>
+      {% for column in site.data.test1[0] %}
+        <th>{{ column[0] }}</th>
+      {% endfor %}
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in site.data.test1 %}
+      <tr>
+        {% for cell in row %}
+          <td>{{ cell[1] }}</td>
+        {% endfor %}
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
 A notice displays information that explains nearby content. Often used to call attention to a particular detail.
 
 When using Kramdown `{: .notice}` can be added after a sentence to assign the `.notice` to the `<p></p>` element. 
